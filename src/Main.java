@@ -6,28 +6,35 @@ import Students.*;
 public class Main {
     public static void main(String[] args) {
         // Ученики факультета Гриффиндор
-        StudentOfGryffindor Harry_Potter = new StudentOfGryffindor(100, 100, 100);
-        StudentOfGryffindor Hermione_Granger = new StudentOfGryffindor(90, 90, 100);
-        StudentOfGryffindor Ron_Weasley = new StudentOfGryffindor(80, 80, 80);
+        StudentOfGryffindor Harry_Potter = new StudentOfGryffindor("Гарри Поттер", 100, 100, 100, 100, 100);
+        StudentOfGryffindor Hermione_Granger = new StudentOfGryffindor("Гермиона Грейнджер", 100, 90, 100, 100, 90);
+        StudentOfGryffindor Ron_Weasley = new StudentOfGryffindor("Рон Уизли", 80, 80, 80,90, 70);
 
         // Ученики факультета Слизерин
-        StudentOfSlytherin Draco_Malfoy = new StudentOfSlytherin(100, 100, 100, 100, 100);
-        StudentOfSlytherin Graham_Montague = new StudentOfSlytherin(90, 80, 110, 70, 100);
-        StudentOfSlytherin GregoryGoyle = new StudentOfSlytherin(60, 70, 100, 90, 80);
+        StudentOfSlytherin Draco_Malfoy = new StudentOfSlytherin("Драко Малфой",100, 100, 100, 100, 100, 90, 90);
+        StudentOfSlytherin Graham_Montague = new StudentOfSlytherin("Грэхэм Монтегю",90, 80, 100, 70, 100, 100, 80);
+        StudentOfSlytherin GregoryGoyle = new StudentOfSlytherin("Грегори Гойл",60, 70, 100, 90, 80, 100, 70);
 
         // Ученики факультета Пуффендуй
-        StudentOfPuffindui Zachary_Smith = new StudentOfPuffindui(90, 100, 100);
-        StudentOfPuffindui Cedric_Diggory = new StudentOfPuffindui(100, 100, 100);
-        StudentOfPuffindui Justin_Finch_Fletchley = new StudentOfPuffindui(100, 100, 70);
+        StudentOfPuffindui Zachary_Smith = new StudentOfPuffindui("Захария Смит",90, 100, 100, 70, 80);
+        StudentOfPuffindui Cedric_Diggory = new StudentOfPuffindui("Седрик Диггори",100, 100, 100, 90, 50);
+        StudentOfPuffindui Justin_Finch_Fletchley = new StudentOfPuffindui("Джастин Финч-Флетчли",100, 100, 70, 100, 80);
 
         // Ученики факультета Когтевран
-        StudentOfRawenClaw Zhou_Chang = new StudentOfRawenClaw(100, 100, 100, 100);
-        StudentOfRawenClaw Padma_Patil = new StudentOfRawenClaw(90, 80, 100, 90);
-        StudentOfRawenClaw Marcus_Belby = new StudentOfRawenClaw(80, 100, 100, 100);
+        StudentOfRawenClaw Zhou_Chang = new StudentOfRawenClaw("Чжоу Чанг",100, 100, 100, 100, 90, 90);
+        StudentOfRawenClaw Padma_Patil = new StudentOfRawenClaw("Падма Патил",90, 80, 100, 90, 70, 80);
+        StudentOfRawenClaw Marcus_Belby = new StudentOfRawenClaw("Маркус Белби",80, 100, 100, 100, 80, 100);
 
-        Harry_Potter.PrintQualitiesAll("Harry_Potter");
-        Padma_Patil.PrintQualitiesAll("Padma_Patil");
+        System.out.println("2. Описание студента");
+        Harry_Potter.PrintQualitiesAll();
 
+        System.out.println("3. Сравнение между собой двух учеников одного факультета по свойствам");
         Gryffindor.CompareStudents(Hermione_Granger, Ron_Weasley);
+
+        System.out.println("4.1. Сравнение между собой двух любых учеников Хогвартса по силе магии");
+        Hogwarts.CompareStudentsByPowerOfWitchcraft(Marcus_Belby, Justin_Finch_Fletchley);
+
+        System.out.println("4.2. Сравнение между собой двух любых учеников Хогвартса по расстоянию трансгрессии");
+        Hogwarts.CompareStudentsByDistanceOfTransgression(Zhou_Chang, Cedric_Diggory);
     }
 }

@@ -1,12 +1,6 @@
 package Students;
 
 public class StudentOfGryffindor extends Student {
-    /*// Сила колдовства (в баллах)
-    int powerOfWitchcraft;
-
-    // Расстояние трансгрессии
-    int distanceOfTransgression;*/
-
     // Свойства факультета Гриффиндор
     // благородство
     int nobility;
@@ -17,7 +11,10 @@ public class StudentOfGryffindor extends Student {
     // храбрость
     int bravery;
 
-    public StudentOfGryffindor(int nobility, int honor, int bravery) {
+    public StudentOfGryffindor(String name, int powerOfWithcraft, int distanceOfTransgression, int nobility, int honor, int bravery) {
+        this.name = name;
+        this.powerOfWitchcraft = powerOfWithcraft;
+        this.distanceOfTransgression = distanceOfTransgression;
         this.nobility = nobility;
         this.honor = honor;
         this.bravery = bravery;
@@ -30,7 +27,7 @@ public class StudentOfGryffindor extends Student {
         System.out.println(qualitiesSpecial);
     }
 
-    public void PrintQualitiesAll(String name)
+    public void PrintQualitiesAll()
     {
         System.out.println(name);
         PrintQualitiesCommon();
@@ -38,9 +35,10 @@ public class StudentOfGryffindor extends Student {
         System.out.println();
     }
 
-    public int GetSum()
+    // Получить сумму всех качеств
+    public int GetSumAll()
     {
-        int sum = nobility + honor + bravery;
+        int sum = powerOfWitchcraft + distanceOfTransgression + nobility + honor + bravery;
         return sum;
     }
 

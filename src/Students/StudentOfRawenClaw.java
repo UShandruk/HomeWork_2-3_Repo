@@ -20,7 +20,10 @@ public class StudentOfRawenClaw extends Student {
     // творчество
     int creative;
 
-    public StudentOfRawenClaw(int smart, int wise, int witty, int creative) {
+    public StudentOfRawenClaw(String name, int powerOfWithcraft, int distanceOfTransgression, int smart, int wise, int witty, int creative) {
+        this.name = name;
+        this.powerOfWitchcraft = powerOfWithcraft;
+        this.distanceOfTransgression = distanceOfTransgression;
         this.smart = smart;
         this.wise = wise;
         this.witty = witty;
@@ -34,7 +37,7 @@ public class StudentOfRawenClaw extends Student {
         System.out.println(qualitiesSpecial);
     }
 
-    public void PrintQualitiesAll(String name)
+    public void PrintQualitiesAll()
     {
         System.out.println(name);
         PrintQualitiesCommon();
@@ -42,9 +45,10 @@ public class StudentOfRawenClaw extends Student {
         System.out.println();
     }
 
-    public int GetSum()
+    // Получить сумму всех качеств
+    public int GetSumAll()
     {
-        int sum = smart + wise + witty + creative;
+        int sum = powerOfWitchcraft + distanceOfTransgression + smart + wise + witty + creative;
         return sum;
     }
 }

@@ -23,7 +23,10 @@ public class StudentOfSlytherin extends Student {
     // жажда власти
     int thirstForPower;
 
-    public StudentOfSlytherin(int cunning, int determination, int ambition, int resourcefulness, int thirstForPower) {
+    public StudentOfSlytherin(String name, int powerOfWithcraft, int distanceOfTransgression, int cunning, int determination, int ambition, int resourcefulness, int thirstForPower) {
+        this.name = name;
+        this.powerOfWitchcraft = powerOfWithcraft;
+        this.distanceOfTransgression = distanceOfTransgression;
         this.cunning = cunning;
         this.determination = determination;
         this.ambition = ambition;
@@ -38,7 +41,7 @@ public class StudentOfSlytherin extends Student {
         System.out.println(qualitiesSpecial);
     }
 
-    public void PrintQualitiesAll(String name)
+    public void PrintQualitiesAll()
     {
         System.out.println(name);
         PrintQualitiesCommon();
@@ -46,9 +49,10 @@ public class StudentOfSlytherin extends Student {
         System.out.println();
     }
 
-    public int GetSum()
+    // Получить сумму всех качеств
+    public int GetSumAll()
     {
-        int sum = cunning + determination + ambition + resourcefulness + thirstForPower;
+        int sum = powerOfWitchcraft + distanceOfTransgression + cunning + determination + ambition + resourcefulness + thirstForPower;
         return sum;
     }
 }

@@ -17,10 +17,14 @@ public class StudentOfPuffindui extends Student {
     // честность
     int honest;
 
-    public StudentOfPuffindui(int hardworking, int loyal, int honest) {
+    public StudentOfPuffindui(String name, int powerOfWithcraft, int distanceOfTransgression, int hardworking, int loyal, int honest) {
+        this.name = name;
+        this.powerOfWitchcraft = powerOfWithcraft;
+        this.distanceOfTransgression = distanceOfTransgression;
         this.hardworking = hardworking;
         this.loyal = loyal;
         this.honest = honest;
+
     }
 
 
@@ -31,7 +35,7 @@ public class StudentOfPuffindui extends Student {
         System.out.println(qualitiesSpecial);
     }
 
-    public void PrintQualitiesAll(String name)
+    public void PrintQualitiesAll()
     {
         System.out.println(name);
         PrintQualitiesCommon();
@@ -39,9 +43,10 @@ public class StudentOfPuffindui extends Student {
         System.out.println();
     }
 
-    public int GetSum()
+    // Получить сумму всех качеств
+    public int GetSumAll()
     {
-        int sum = hardworking + loyal + honest;
+        int sum = powerOfWitchcraft + distanceOfTransgression + hardworking + loyal + honest;
         return sum;
     }
 }

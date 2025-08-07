@@ -8,11 +8,21 @@ public class Student {
     // Имя
     String name;
 
+    public int getPowerOfWitchcraft() {
+        return powerOfWitchcraft;
+    }
+
+    public int getDistanceOfTransgression() {
+        return distanceOfTransgression;
+    }
+
     // Сила колдовства (в баллах)
     int powerOfWitchcraft;
 
     // Расстояние трансгрессии
     int distanceOfTransgression;
+
+
 
     public void PrintQualitiesCommon()
     {

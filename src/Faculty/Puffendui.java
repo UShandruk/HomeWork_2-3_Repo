@@ -1,5 +1,7 @@
 package Faculty;
 
+import Students.StudentOfPuffindui;
+
 // Факультет Пуффендуй
 public class Puffendui extends Hogwarts {
     // трудолюбие
@@ -11,16 +13,17 @@ public class Puffendui extends Hogwarts {
     // честность
     int honest;
 
-    public Puffendui(int hardworking, int loyal, int honest) {
-        this.hardworking = hardworking;
-        this.loyal = loyal;
-        this.honest = honest;
-    }
+    // Сравнить учеников
+    public static void CompareStudents(StudentOfPuffindui studentOne, StudentOfPuffindui studentTwo) {
+        String result = "";
+        int studentOneSum = studentOne.GetSumAll();
+        int studentTwoSum = studentTwo.GetSumAll();
 
-    public void PrintQualitiesSpecial()
-    {
-        System.out.println("Особые качества");
-        String qualitiesSpecial = "трудолюбие: " + hardworking + ", верность: " + loyal + ", честность: " + honest;
-        System.out.println(qualitiesSpecial);
+        System.out.println(studentOne.getName() + "(" + studentOneSum + ") баллов");
+        System.out.println(studentTwo.getName() + "(" + studentTwoSum + ") баллов");
+
+        if (studentOneSum > studentTwoSum) {
+            System.out.println(studentOne.getName() + " - лучший Пуффендуец, чем " + studentTwo.getName() + ".");
+        }
     }
 }

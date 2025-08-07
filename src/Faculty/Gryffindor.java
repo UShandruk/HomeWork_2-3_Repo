@@ -1,9 +1,6 @@
 package Faculty;
 
-import Students.Student;
 import Students.StudentOfGryffindor;
-
-import java.util.ArrayList;
 
 // Факультет Гриффиндор
 public class Gryffindor extends Hogwarts {
@@ -16,20 +13,17 @@ public class Gryffindor extends Hogwarts {
     // храбрость
     int bravery;
 
-    public Gryffindor(int bravery, int honor, int nobility) {
-        this.bravery = bravery;
-        this.honor = honor;
-        this.nobility = nobility;
-    }
-
     // Сравнить учеников
     public static void CompareStudents(StudentOfGryffindor studentOne, StudentOfGryffindor studentTwo) {
         String result = "";
-        int studentOneSum = studentOne.GetSum();
-        int studentTwoSum = studentTwo.GetSum();
+        int studentOneSum = studentOne.GetSumAll();
+        int studentTwoSum = studentTwo.GetSumAll();
+
+        System.out.println(studentOne.getName() + "(" + studentOneSum + ") баллов");
+        System.out.println(studentTwo.getName() + "(" + studentTwoSum + ") баллов");
+
         if (studentOneSum > studentTwoSum) {
-            System.out.println(studentOne.getName() + "(" + studentOneSum + ") баллов");
-            System.out.println(studentTwo.getName() + "(" + studentTwoSum + ") баллов");
+            System.out.println(studentOne.getName() + " - лучший Гриффиндорец, чем " + studentTwo.getName() + ".");
         }
     }
 }
