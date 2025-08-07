@@ -1,4 +1,3 @@
-import Faculty.*;
 import Students.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -29,12 +28,14 @@ public class Main {
         Harry_Potter.PrintQualitiesAll();
 
         System.out.println("3. Сравнение между собой двух учеников одного факультета по свойствам");
-        Gryffindor.CompareStudents(Hermione_Granger, Ron_Weasley);
+        StudentOfGryffindor.CompareStudents(Hermione_Granger, Ron_Weasley);
+        System.out.println();
 
         System.out.println("4.1. Сравнение между собой двух любых учеников Хогвартса по силе магии");
-        Hogwarts.CompareStudentsByPowerOfWitchcraft(Marcus_Belby, Justin_Finch_Fletchley);
+        StudentOfHogwarts.CompareStudentsByPowerOfWitchcraft(Marcus_Belby, Justin_Finch_Fletchley);
+        System.out.println();
 
         System.out.println("4.2. Сравнение между собой двух любых учеников Хогвартса по расстоянию трансгрессии");
-        Hogwarts.CompareStudentsByDistanceOfTransgression(Zhou_Chang, Cedric_Diggory);
+        StudentOfHogwarts.CompareStudentsByDistanceOfTransgression(Zhou_Chang, Cedric_Diggory);
     }
 }

@@ -1,37 +1,71 @@
 package Students;
 
-public class StudentOfSlytherin extends Student {
-    /*// Сила колдовства (в баллах)
-    int powerOfWitchcraft;
-
-    // Расстояние трансгрессии
-    int distanceOfTransgression;*/
-
+public class StudentOfSlytherin extends StudentOfHogwarts {
     // Свойства факультета Слизерин
     // хитрость
-    int cunning;
+    private int cunning;
 
     // решительность
-    int determination;
+    private int determination;
 
     // честолюбие
-    int ambition;
+    private int ambition;
 
     // изворотливость
-    int resourcefulness;
+    private int resourcefulness;
 
     // жажда власти
-    int thirstForPower;
+    private int thirstForPower;
+
+    public int getCunning() {
+        return cunning;
+    }
+
+    public int getDetermination() {
+        return determination;
+    }
+
+    public int getAmbition() {
+        return ambition;
+    }
+
+    public int getResourcefulness() {
+        return resourcefulness;
+    }
+
+    public int getThirstForPower() {
+        return thirstForPower;
+    }
+
+    public void setCunning(int cunning) {
+        this.cunning = cunning;
+    }
+
+    public void setDetermination(int determination) {
+        this.determination = determination;
+    }
+
+    public void setAmbition(int ambition) {
+        this.ambition = ambition;
+    }
+
+    public void setResourcefulness(int resourcefulness) {
+        this.resourcefulness = resourcefulness;
+    }
+
+    public void setThirstForPower(int thirstForPower) {
+        this.thirstForPower = thirstForPower;
+    }
 
     public StudentOfSlytherin(String name, int powerOfWithcraft, int distanceOfTransgression, int cunning, int determination, int ambition, int resourcefulness, int thirstForPower) {
-        this.name = name;
-        this.powerOfWitchcraft = powerOfWithcraft;
-        this.distanceOfTransgression = distanceOfTransgression;
-        this.cunning = cunning;
-        this.determination = determination;
-        this.ambition = ambition;
-        this.resourcefulness = resourcefulness;
-        this.thirstForPower = thirstForPower;
+        this.setName(name);
+        this.setPowerOfWitchcraft(powerOfWithcraft);
+        this.setDistanceOfTransgression(distanceOfTransgression);
+        this.setCunning(cunning);
+        this.setDetermination(determination);
+        this.setAmbition(ambition);
+        this.setResourcefulness(resourcefulness);
+        this.setThirstForPower(thirstForPower);
     }
 
     public void PrintQualitiesSpecial()
@@ -43,7 +77,7 @@ public class StudentOfSlytherin extends Student {
 
     public void PrintQualitiesAll()
     {
-        System.out.println(name);
+        System.out.println(this.getName());
         PrintQualitiesCommon();
         PrintQualitiesSpecial();
         System.out.println();
@@ -52,7 +86,21 @@ public class StudentOfSlytherin extends Student {
     // Получить сумму всех качеств
     public int GetSumAll()
     {
-        int sum = powerOfWitchcraft + distanceOfTransgression + cunning + determination + ambition + resourcefulness + thirstForPower;
+        int sum = this.getPowerOfWitchcraft() + this.getDistanceOfTransgression() + this.getCunning() + this.getDetermination() + this.getAmbition() + this.getResourcefulness() + this.getThirstForPower();
         return sum;
+    }
+
+    // Сравнить учеников
+    public static void CompareStudents(StudentOfSlytherin studentOne, StudentOfSlytherin studentTwo) {
+        String result = "";
+        int studentOneSum = studentOne.GetSumAll();
+        int studentTwoSum = studentTwo.GetSumAll();
+
+        System.out.println(studentOne.getName() + "(" + studentOneSum + ") баллов");
+        System.out.println(studentTwo.getName() + "(" + studentTwoSum + ") баллов");
+
+        if (studentOneSum > studentTwoSum) {
+            System.out.println(studentOne.getName() + " - лучший Слизеринец, чем " + studentTwo.getName() + ".");
+        }
     }
 }
